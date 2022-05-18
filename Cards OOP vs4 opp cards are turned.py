@@ -303,7 +303,9 @@ card.render(-510,-400, pen)
 def draw_onclick(x, y):
     card = deck.drawcard()
     card.render(-510,-400, pen)
-    pen1.clear() #Want to clear button and text
+    pen1.clear()
+    pen1.hideturtle()
+
 
 pen1 = Turtle()
 pen1.hideturtle()
