@@ -9,6 +9,9 @@ import turtleBeads
 from turtle import *
 from turtleBeads import *
 from tkinter import *
+import winsound
+
+
 
 
 pen = turtle.Turtle()
@@ -16,6 +19,9 @@ wn = turtle.Screen()
 wn.bgpic("felt.gif")
 wn.setup(1200, 1000)
 wn.title("Deck of Cards Simulator by ZimTKE")
+
+#Play music
+#winsound.PlaySound('atw.wav',winsound.SND_ASYNC)
 
 #Used to generate symbol/text on bottom right of card
 bottomright = turtle.getcanvas()
@@ -297,18 +303,20 @@ card.render(-510,-400, pen)
 def draw_onclick(x, y):
     card = deck.drawcard()
     card.render(-510,-400, pen)
+    pen1.clear() #Want to clear button and text
 
-#pen = Turtle()
-pen.hideturtle()
-pen.color("black")
-pen.shape('circle')
-pen.fillcolor('black')
-pen.penup()
-pen.goto(-510, -300)
-pen.write("Click for Trump Card", align='center', font=FONT)
-pen.sety(-340+ CURSOR_SIZE + FONT_SIZE)
-pen.onclick(draw_onclick)
-pen.showturtle()
+pen1 = Turtle()
+pen1.hideturtle()
+pen1.color("black")
+pen1.shape('circle')
+pen1.fillcolor('black')
+pen1.penup()
+pen1.goto(-510, -300)
+pen1.write("Click for Trump Card", align='center', font=FONT)
+pen1.sety(-340+ CURSOR_SIZE + FONT_SIZE)
+
+pen1.onclick(draw_onclick)
+pen1.showturtle()
 
 pen = Turtle()
 pen.hideturtle()
